@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using gregglistsql.Models;
+using gregglistsql.Repositories;
 
 namespace gregglistsql.Services
 {
   public class JobsService
   {
 
-    private readonly JobsService _repo;
+    private readonly JobsRepository _repo;
 
-    public JobsService(JobsService repo)
+    public JobsService(JobsRepository repo)
     {
       _repo = repo;
     }

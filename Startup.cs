@@ -42,8 +42,8 @@ namespace gregglistsql
 
       services.AddScoped<AccountsRepository>();
       services.AddScoped<AccountService>();
-      services.AddTransient<JobsService>();
       services.AddTransient<JobsRepository>();
+      services.AddTransient<JobsService>();
     }
 
     private void ConfigureCors(IServiceCollection services)

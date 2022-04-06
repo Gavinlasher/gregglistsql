@@ -27,7 +27,7 @@ namespace gregglistsql.Repositories
     INSERT INTO Jobs
     (title,wage)
     VALUES
-   (@Title,@Wage)
+   (@Title,@Wage);
    SELECT LAST_INSERT_ID();
     ";
       int id = _db.ExecuteScalar<int>(sql, newJob);
@@ -35,5 +35,18 @@ namespace gregglistsql.Repositories
       return newJob;
     }
 
+    internal void Edit(Job og)
+    {
+      throw new NotImplementedException();
+    }
+    internal Job GetById(int id)
+    {
+      throw new NotImplementedException();
+    }
+
+    internal void Remove(int id)
+    {
+      throw new NotImplementedException();
+    }
   }
 }
