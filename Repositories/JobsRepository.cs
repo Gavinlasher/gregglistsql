@@ -37,16 +37,24 @@ namespace gregglistsql.Repositories
 
     internal void Edit(Job og)
     {
-      throw new NotImplementedException();
+      string sql = @"
+      UPDATE Jobs
+      SET
+       title = @Title,
+       wage = @wage
+      WHERE id = @Id;";
+      _db.Execute(sql, og);
     }
     internal Job GetById(int id)
     {
-      throw new NotImplementedException();
+      string sql = "SELECT * FROM Jobs WHERE id = @id;";
+      return _db.QueryFirstOrDefault<Job>(sql, new { id });
     }
 
     internal void Remove(int id)
     {
-      throw new NotImplementedException();
+      string sql = "DELETE FROM Jobs WHERE id = @id LIMIT 1;";
+      _db.Execute(sql, new { id });
     }
   }
 }
